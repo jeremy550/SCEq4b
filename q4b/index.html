@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 
+</head>
+<body>
+
+<form action="validate.php" method="post">
+
+<h3>Email</h3><input type="text" id="email" name="email" size="80" required>
+<h3>Password</h3>
+<input type="password" id="password" name="password" size="80" height="100" required><br><br> 
+
+<input type="checkbox" id="remember" name="remember">
+<label for ="remember">Remember my email</input>
+<br><br>
+<input type="submit" name="submit"  value="Login">
+<br></br>
+<a href="registration.php">Create Account</a>
+</form>
+<script>
+    var  cb = document.getElementById('remember');
+ 
+     function checkbox() {
+      
+         if(cb.checked==true){
+    
+    var email = document.getElementById("email").value;     
+    localStorage.setItem("email",email);
+     }
+     }
+ 
+     window.onload = function(){
+           document.getElementById( "email" ).value = localStorage.getItem( "email" );
+ 
+     }
+     
+ </script>
+
+</body>
+</html>
+
+
